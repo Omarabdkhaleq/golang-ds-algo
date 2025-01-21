@@ -1,7 +1,7 @@
 package hashtable
 
 import (
-	"ds/linkedlist"
+	"ds/ds/linkedlist"
 	"fmt"
 	"math"
 )
