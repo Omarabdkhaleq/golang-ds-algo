@@ -4,19 +4,19 @@ import "fmt"
 
 /* STACK => LIFO */
 
-type stack struct {
+type Stack struct {
 	top   int
 	stack []int
 }
 
-func NewStack(size int) stack {
-	return stack{
+func NewStack(size int) Stack {
+	return Stack{
 		top:   -1,
 		stack: make([]int, 0, size),
 	}
 }
 
-func (s stack) Push(i int) stack {
+func (s Stack) Push(i int) Stack {
 	if s.IsFull() {
 		panic("stack is full")
 	}
@@ -25,7 +25,7 @@ func (s stack) Push(i int) stack {
 	return s
 }
 
-func (s stack) Pop() stack {
+func (s Stack) Pop() Stack {
 	if s.IsEmpty() {
 		panic("stack is empty")
 	}
@@ -34,14 +34,14 @@ func (s stack) Pop() stack {
 	return s
 }
 
-func (s stack) IsEmpty() bool {
+func (s Stack) IsEmpty() bool {
 	if len(s.stack) == 0 {
 		return true
 	}
 	return false
 }
 
-func (s stack) IsFull() bool {
+func (s Stack) IsFull() bool {
 	if len(s.stack) == 0 {
 		return false
 	}
@@ -51,7 +51,7 @@ func (s stack) IsFull() bool {
 	return false
 }
 
-func (s stack) Peek() int {
+func (s Stack) Peek() int {
 	return s.stack[s.top]
 }
 
